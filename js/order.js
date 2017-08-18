@@ -130,15 +130,15 @@ $(document).ready(() => {
       $("button[name='order']").prop("disabled", false);
       $("button[name='order']").toggleClass("disabled");
     }
+    $("button[name='order']").click(function() {
+      event.preventDefault();
+      Materialize.toast('Someone is on their way with your food!', 5000, 'rounded');
+      window.setTimeout(function() {
+        location.reload();
+      }, 3000);
+    });
   });
 
-  $("button[name='order']").click(function() {
-    event.preventDefault();
-    Materialize.toast('Someone is on their way with your food!', 2000, 'rounded');
-    window.setTimeout(function() {
-      location.reload();
-    }, 3000);
-  });
 
   $('.parallax').parallax();
 })
